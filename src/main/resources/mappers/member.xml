@@ -34,7 +34,8 @@
 	</update>
 	
 	<delete id="deleteMember" parameterType="String">
-		delete from ssafy_member
+		delete
+		from ssafy_member
 		where userid = #{userid}
 	</delete>
 	
