@@ -84,9 +84,9 @@ COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
--- Table `ssafyweb`.`board`
+-- Table `ssafyweb`.`notice`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `board` (
+CREATE TABLE IF NOT EXISTS `notice` (
   `articleno` INT NOT NULL AUTO_INCREMENT,
   `userid` VARCHAR(16) NULL DEFAULT NULL,
   `subject` VARCHAR(100) NULL DEFAULT NULL,
@@ -94,8 +94,8 @@ CREATE TABLE IF NOT EXISTS `board` (
   `hit` INT NULL DEFAULT '0',
   `regtime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`articleno`),
-  INDEX `board_to_member_fk` (`userid` ASC) VISIBLE,
-  CONSTRAINT `board_to_member_fk`
+  INDEX `notice_to_member_fk` (`userid` ASC) VISIBLE,
+  CONSTRAINT `notice_to_member_fk`
     FOREIGN KEY (`userid`)
     REFERENCES `ssafy_member` (`userid`))
 ENGINE = InnoDB
@@ -214,25 +214,6 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 -- -----------------------------------------------------
--- Table `ssafyweb`.`notice`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `notice` (
-  `articleno` INT NOT NULL AUTO_INCREMENT,
-  `userid` VARCHAR(16) NULL DEFAULT NULL,
-  `subject` VARCHAR(100) NULL DEFAULT NULL,
-  `content` VARCHAR(2000) NULL DEFAULT NULL,
-  `regtime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`articleno`),
-  INDEX `notice_userid_fk_idx` (`userid` ASC) VISIBLE,
-  CONSTRAINT `notice_userid_fk`
-    FOREIGN KEY (`userid`)
-    REFERENCES `ssafy_member` (`userid`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
-
-
--- -----------------------------------------------------
 -- Table `ssafyweb`.`qna`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `qna` (
@@ -257,8 +238,10 @@ insert into qna(`subject`, `userid`, `content`)
 values ('113133', 'ssafy', '테스트내용');
 select * from qna;
 
-select articleno, userid, subject, content, hit, regtime
-	from board 
+select * from notice;
+
+select articleno, userid, subject, content, regtime
+	from notice 
 	order by articleno desc;
     
 insert into ssafy_member (userid, userpwd, username, email, joindate)
@@ -267,7 +250,7 @@ values ('admin', '1234', '관리자', 'admin@ssafy.com', now());
 insert into ssafy_member (userid, userpwd, username, email, joindate)
 values ('ssafy', 'ssafy', '싸피', 'ssafy@ssafy.com', now());
     
-insert into board(`subject`, `userid`, `content`)
+insert into notice(`subject`, `userid`, `content`)
 values ('113133', 'ssafy', '테스트내용');
 
 select articleno, userid, subject, regtime
