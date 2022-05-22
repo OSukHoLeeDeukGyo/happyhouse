@@ -12,5 +12,5 @@ public interface MemberMapper {
 	public MemberDto chkId(String userid);
 	public void registerMember(MemberDto memberDto);
 	public void updateMember(MemberDto memberDto);
-	public void deleteMember(String userid);
+	public int deleteMember(String userid);
 }

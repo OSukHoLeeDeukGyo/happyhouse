@@ -29,7 +29,7 @@
 	
 	<update id="updateMember" parameterType="memberDto">
 		update ssafy_member
-		set username = #{username}, password = #{password}, email = #{email},
+		set username = #{username}, userpwd = #{userpwd}, email = #{email}
 		where userid = #{userid}
 	</update>
 	

@@ -39,11 +39,10 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public void updateMember(MemberDto memberDto) {
 		memberMapper.updateMember(memberDto);
-		
 	}
 
 	@Override
-	public void deleteMember(String userid) {
-		memberMapper.deleteMember(userid);
+	public boolean deleteMember(String userid) {
+		return memberMapper.deleteMember(userid) == 1;
 	}
 }

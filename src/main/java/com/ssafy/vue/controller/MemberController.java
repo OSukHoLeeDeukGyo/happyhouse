@@ -129,13 +129,14 @@ public class MemberController {
 	}
 	
 	@ApiOperation(value = "계정 삭제 요청", notes = "계정 삭제 요청을 보낸다.", response = Map.class)
-	@DeleteMapping("/delete")
-	public ResponseEntity<String> deleteId(@RequestBody String userid) throws Exception {
-		if (userid != null) {
-			memberService.deleteMember(userid);
+	@PostMapping("/delete")
+	public ResponseEntity<String> deleteId(@RequestBody String userid) {
+		userid = userid.substring(1, userid.length() - 1);
+		logger.debug("로그인 정보 : {}", userid);
+		if (memberService.deleteMember(userid)) {
 			return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<String>(FAIL, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
+		return new ResponseEntity<String>(FAIL, HttpStatus.INTERNAL_SERVER_ERROR);
+
 	}
 }

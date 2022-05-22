@@ -9,5 +9,5 @@ public interface MemberService {
 	public MemberDto chkId(String userid);
 	public void registerMember(MemberDto memberDto);
 	public void updateMember(MemberDto memberDto);
-	public void deleteMember(String userid);
+	public boolean deleteMember(String userid);
 }
