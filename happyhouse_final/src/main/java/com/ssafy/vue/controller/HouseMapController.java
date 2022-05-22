@@ -41,6 +41,11 @@ public class HouseMapController {
 		return new ResponseEntity<List<HouseInfoDto>>(haHouseMapService.getDongInGugun(gugun), HttpStatus.OK);
 	}
 	
+	@GetMapping("/guApt")
+	public ResponseEntity<List<HouseInfoDto>> guApt(@RequestParam("gu") String gugun) throws Exception {
+		return new ResponseEntity<List<HouseInfoDto>>(haHouseMapService.getAptInGu(gugun), HttpStatus.OK);
+	}	
+	
 	@GetMapping("/apt")
 	public ResponseEntity<List<HouseInfoDto>> apt(@RequestParam("dong") String dong) throws Exception {
 		return new ResponseEntity<List<HouseInfoDto>>(haHouseMapService.getAptInDong(dong), HttpStatus.OK);

@@ -10,11 +10,17 @@
 		order by sidoCode
 	</select>
 	
-	<select id="getGugunInSido" parameterType="string" resultType="sidoGugunCodeDto">
+	<!-- <select id="getGugunInSido" parameterType="string" resultType="sidoGugunCodeDto">
 		select left(gugunCode,5) gugunCode, gugunName
 		from guguncode
 		where left(gugunCode,2) = #{sido}
 		order by gugunCode
+	</select> -->
+	
+	<select id="getGugunInSido" parameterType="string" resultType="sidoGugunCodeDto">
+		select distinct left(dongCode,5) gugunCode, gugunName 
+		from dongcode 
+		where dongCode like "11%";
 	</select>
 	
 	<select id="getDongInGugun" parameterType="string" resultType="houseInfoDto">
@@ -34,6 +40,14 @@
 		on left(h.dongcode,5) = left(gu.guguncode,5)
 		where dongCode = #{dong} 
 		order by aptName
+	</select>
+	
+	<select id="getAptInGu" parameterType="string" resultType="houseInfoDto">
+		select aptCode, aptName, dongCode, dongName, buildYear, jibun, lng, lat
+				from houseinfo 
+		
+		where guCode = #{gugun} 
+		order by aptCode
 	</select>
 	
 </mapper>
