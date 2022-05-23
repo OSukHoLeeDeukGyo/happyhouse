@@ -5,14 +5,10 @@ public class HouseInfoDto {
 	private String aptName;
 	private String dongCode; //ex: 1111011500  . 왼쪽5개 구 코드, 오른쪽5개 동 코드
 	private String dongName; //ex: 사직동
-	//private String sidoName;
-	//private String gugunName;
 	private int buildYear;
 	private String jibun;
 	private String lat;
 	private String lng;
-	//private String img;
-	//private String recentPrice;
 
 	public String getAptCode() {
 		return aptCode;
