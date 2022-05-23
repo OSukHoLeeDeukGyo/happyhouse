@@ -17,8 +17,6 @@ public class NoticeServiceImpl implements NoticeService {
 
     @Override
 	public List<Notice> retrieveNotice() {
-    	System.out.println("test");
-    	System.out.println(noticeMapper.selectNotice());
 		return noticeMapper.selectNotice();
 	}
     

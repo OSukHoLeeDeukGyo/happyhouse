@@ -3,8 +3,8 @@ package com.ssafy.vue.dto;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel(value = "Notice (공지사항정보)", description = "글번호, 제목, 내용, 작성자아이디, 작성일을 가진   Domain Class")
-public class Notice {
+@ApiModel(value = "Qna (공지사항정보)", description = "글번호, 제목, 내용, 작성자아이디, 작성일을 가진   Domain Class")
+public class Qna {
 	@ApiModelProperty(value = "글번호")
 	private int articleno;
 	@ApiModelProperty(value = "작성자아이디")
