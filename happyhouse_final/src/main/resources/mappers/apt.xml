@@ -42,6 +42,14 @@
 		order by aptName
 	</select>
 	
+	<select id="getAptDeals" parameterType="string" resultType="houseDealDto">
+		select no, dealAmount, dealYear, dealMonth, dealDay, area, floor, aptCode
+				from housedeal 
+		
+		where aptCode = #{aptCode} 
+		order by no
+	</select>
+	
 	<select id="getAptInGu" parameterType="string" resultType="houseInfoDto">
 		select aptCode, aptName, dongCode, dongName, buildYear, jibun, lng, lat
 				from houseinfo 

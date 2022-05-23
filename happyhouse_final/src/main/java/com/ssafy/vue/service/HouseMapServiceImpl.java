@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ssafy.vue.dto.HouseDealDto;
 import com.ssafy.vue.dto.HouseInfoDto;
 import com.ssafy.vue.dto.SidoGugunCodeDto;
 import com.ssafy.vue.mapper.HouseMapMapper;
@@ -38,6 +39,11 @@ public class HouseMapServiceImpl implements HouseMapService {
 	@Override
 	public List<HouseInfoDto> getAptInGu(String gugun) {
 		return houseMapMapper.getAptInGu(gugun);
+	}
+	
+	@Override
+	public List<HouseDealDto> getAptDeals(String aptCode) {
+		return houseMapMapper.getAptDeals(aptCode);
 	}
 
 }
