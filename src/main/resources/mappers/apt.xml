@@ -50,6 +50,13 @@
 		order by no
 	</select>
 	
+	<select id="getAptDetail" parameterType="string" resultType="houseInfoDto">
+		select aptCode, aptName, dongCode, dongName, buildYear, jibun, lng, lat
+				from houseinfo
+		
+		where aptCode = #{aptCode} 
+	</select>
+	
 	<select id="getAptInGu" parameterType="string" resultType="houseInfoDto">
 		select aptCode, aptName, dongCode, dongName, buildYear, jibun, lng, lat
 				from houseinfo 

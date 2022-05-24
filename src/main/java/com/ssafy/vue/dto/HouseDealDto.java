@@ -8,7 +8,7 @@ public class HouseDealDto {
 	private String dealDay;
 	private String area;
 	private String floor;
-	private String atpCode;
+	private String aptCode;
 	
 	public String getNo() {
 		return no;
@@ -52,16 +52,16 @@ public class HouseDealDto {
 	public void setFloor(String floor) {
 		this.floor = floor;
 	}
-	public String getAtpCode() {
-		return atpCode;
+	public String getAptCode() {
+		return aptCode;
 	}
-	public void setAtpCode(String atpCode) {
-		this.atpCode = atpCode;
+	public void setAptCode(String aptCode) {
+		this.aptCode = aptCode;
 	}
 	@Override
 	public String toString() {
 		return "HouseDealDto [no=" + no + ", dealAmount=" + dealAmount + ", dealYear=" + dealYear + ", dealMonth="
-				+ dealMonth + ", dealDay=" + dealDay + ", area=" + area + ", floor=" + floor + ", atpCode=" + atpCode
+				+ dealMonth + ", dealDay=" + dealDay + ", area=" + area + ", floor=" + floor + ", aptCode=" + aptCode
 				+ "]";
 	}
 	
