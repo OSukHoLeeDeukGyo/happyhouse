@@ -1,24 +1,24 @@
 package com.ssafy.vue.dto;
 
 public class HouseInfoDto {
-	private int aptCode;
+	private String aptCode; //ex : 11110000000001 . 왼쪽5개 구코드, 오른쪽 나머지 고유번호
 	private String aptName;
-	private String dongCode;
-	private String dongName;
-	private String sidoName;
-	private String gugunName;
+	private String dongCode; //ex: 1111011500  . 왼쪽5개 구 코드, 오른쪽5개 동 코드
+	private String dongName; //ex: 사직동
+	//private String sidoName;
+	//private String gugunName;
 	private int buildYear;
 	private String jibun;
 	private String lat;
 	private String lng;
-	private String img;
-	private String recentPrice;
+	//private String img;
+	//private String recentPrice;
 
-	public int getAptCode() {
+	public String getAptCode() {
 		return aptCode;
 	}
 
-	public void setAptCode(int aptCode) {
+	public void setAptCode(String aptCode) {
 		this.aptCode = aptCode;
 	}
 
@@ -44,22 +44,6 @@ public class HouseInfoDto {
 
 	public void setDongName(String dongName) {
 		this.dongName = dongName;
-	}
-
-	public String getSidoName() {
-		return sidoName;
-	}
-
-	public void setSidoName(String sidoName) {
-		this.sidoName = sidoName;
-	}
-
-	public String getGugunName() {
-		return gugunName;
-	}
-
-	public void setGugunName(String gugunName) {
-		this.gugunName = gugunName;
 	}
 
 	public int getBuildYear() {
@@ -94,28 +78,10 @@ public class HouseInfoDto {
 		this.lng = lng;
 	}
 
-	public String getImg() {
-		return img;
-	}
-
-	public void setImg(String img) {
-		this.img = img;
-	}
-
-	public String getRecentPrice() {
-		return recentPrice;
-	}
-
-	public void setRecentPrice(String recentPrice) {
-		this.recentPrice = recentPrice;
-	}
-
 	@Override
 	public String toString() {
 		return "HouseInfoDto [aptCode=" + aptCode + ", aptName=" + aptName + ", dongCode=" + dongCode + ", dongName="
-				+ dongName + ", sidoName=" + sidoName + ", gugunName=" + gugunName + ", buildYear=" + buildYear
-				+ ", jibun=" + jibun + ", lat=" + lat + ", lng=" + lng + ", img=" + img + ", recentPrice=" + recentPrice
-				+ "]";
+				+ dongName + ", buildYear=" + buildYear + ", jibun=" + jibun + ", lat=" + lat + ", lng=" + lng + "]";
 	}
 
 }
