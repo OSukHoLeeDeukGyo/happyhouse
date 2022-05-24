@@ -27,6 +27,7 @@ public class QnaServiceImpl implements QnaService {
 
 	@Override
 	public Qna detailQna(int articleno) {
+		System.out.println("test");
 		return qnaMapper.selectQnaByNo(articleno);
 	}
 	
@@ -45,5 +46,20 @@ public class QnaServiceImpl implements QnaService {
 	@Transactional
 	public boolean deleteQna(int articleno) {
 		return qnaMapper.deleteQna(articleno) == 1;
+	}
+
+	@Override
+	public boolean writeQnaReply(Qna qna) {
+		return qnaMapper.writeQnaReply(qna) == 1;
+	}
+
+	@Override
+	public boolean updateQnaReply(Qna qna) {
+		return qnaMapper.updateQnaReply(qna) == 1;
+	}
+
+	@Override
+	public boolean deleteQnaReply(int articleno) {
+		return qnaMapper.deleteQnaReply(articleno) == 1;
 	}
 }
