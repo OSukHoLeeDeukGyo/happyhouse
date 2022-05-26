@@ -17,5 +17,4 @@ public interface HouseMapMapper {
 	List<HouseDealDto> getAptDeals(String aptCode);
 	HouseInfoDto getAptDetail(String aptCode);
 	List<HouseDealDto> getAptDealsYearly(String aptCode);
-	
 }
