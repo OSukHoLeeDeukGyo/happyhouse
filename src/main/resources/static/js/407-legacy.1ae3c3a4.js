@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvue_board_bootstrap"]=self["webpackChunkvue_board_bootstrap"]||[]).push([[407],{28407:function(e,t,n){n.r(t),n.d(t,{default:function(){return i}});var r=function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("b-container",{staticClass:"bv-example-row mt-3 text-center"},[n("h3",{staticClass:"underline-hotpink"},[n("b-icon",{attrs:{icon:"journals"}}),e._v(" Q&A")],1),n("router-view")],1)},a=[],s={name:"QuaView"},u=s,o=n(1001),c=(0,o.Z)(u,r,a,!1,null,"2a400edb",null),i=c.exports}}]);
+//# sourceMappingURL=407-legacy.1ae3c3a4.js.map
