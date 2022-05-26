@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvue_board_bootstrap"]=self["webpackChunkvue_board_bootstrap"]||[]).push([[778],{4778:function(t,e,n){n.r(e),n.d(e,{default:function(){return i}});var r=function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("b-container",{staticClass:"bv-example-row mt-3 text-center"},[n("h3",{staticClass:"underline-hotpink"},[n("b-icon",{attrs:{icon:"journals"}}),t._v(" Notice")],1),n("router-view")],1)},a=[],o={name:"NoticeView"},s=o,u=n(1001),c=(0,u.Z)(s,r,a,!1,null,"44d30128",null),i=c.exports}}]);
+//# sourceMappingURL=778.35dca76e.js.map
