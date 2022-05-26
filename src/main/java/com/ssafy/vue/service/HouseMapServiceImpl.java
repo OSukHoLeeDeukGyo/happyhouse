@@ -51,4 +51,9 @@ public class HouseMapServiceImpl implements HouseMapService {
 		return houseMapMapper.getAptDetail(aptCode);
 	}
 
+	@Override
+	public List<HouseDealDto> getAptDealsYearly(String aptCode) {
+		return houseMapMapper.getAptDealsYearly(aptCode);
+	}
+
 }
