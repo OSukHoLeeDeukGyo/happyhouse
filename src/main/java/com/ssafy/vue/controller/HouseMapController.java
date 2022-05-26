@@ -57,4 +57,9 @@ public class HouseMapController {
 		return new ResponseEntity<List<HouseDealDto>>(haHouseMapService.getAptDeals(aptCode), HttpStatus.OK);
 	}
 	
+	@GetMapping("/aptDetail")
+	public ResponseEntity<HouseInfoDto> aptDetail(@RequestParam("aptCode") String aptCode) throws Exception {
+		return new ResponseEntity<HouseInfoDto>(haHouseMapService.getAptDetail(aptCode), HttpStatus.OK);
+	}
+	
 }
