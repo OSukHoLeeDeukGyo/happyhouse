@@ -23,20 +23,34 @@ public class NewsCrawlingServiceImpl implements NewsCrawlingService {
 		Elements titleList = doc.select(".live_list dt");
 		Elements articleList = doc.select(".live_list dd");
 		String[] newsList = new String[6];
-
-		System.out.println("------------------------");
-		System.out.println("타이틀" + titleList.get(1).text());
-		System.out.println("내용" + articleList.get(0).text());
-		System.out.println("------------------------");
-		System.out.println("타이틀" + titleList.get(2).text());
-		System.out.println("내용" + articleList.get(1).text());
 		
-		newsList[0] = titleList.get(1).text();
-		newsList[1] = articleList.get(0).text();
-		newsList[2] = titleList.get(3).text();
-		newsList[3] = articleList.get(1).text();
-		newsList[4] = titleList.get(5).text();
-		newsList[5] = articleList.get(2).text();
+		int chk = 0;
+		if (articleList.get(0) != null) {
+			while (titleList.get(chk).text().length() == 0) {
+				++chk;
+			}
+			newsList[0] = titleList.get(chk).text();
+			newsList[1] = articleList.get(0).text();
+			++chk;
+		}
+		
+		if (articleList.get(1) != null) {
+			while (titleList.get(chk).text().length() == 0) {
+				++chk;
+			}
+			newsList[2] = titleList.get(chk).text();
+			newsList[3] = articleList.get(1).text();
+			++chk;
+		}
+		
+		if (articleList.get(2) != null) {
+			while (titleList.get(chk).text().length() == 0) {
+				++chk;
+			}
+			newsList[4] = titleList.get(chk).text();
+			newsList[5] = articleList.get(2).text();
+			++chk;
+		}
 
 		return newsList;
 	}

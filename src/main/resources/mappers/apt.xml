@@ -52,7 +52,7 @@
 	
 	<select id="getAptDealsYearly" parameterType="string" resultType="houseDealDto">
 		
-		select no, avg(replace(dealAmount, ',','')/area) as dealAmount, dealYear,aptCode from housedeal
+		select avg(replace(dealAmount, ',','')/area) as dealAmount, dealYear,aptCode from housedeal
 		
 		where aptCode = #{aptCode} 
 		 group by dealYear
